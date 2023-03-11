@@ -4,6 +4,7 @@
         "*.html": "html",
         ".env": "plaintext",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "new": "cpp"
     }
 }
