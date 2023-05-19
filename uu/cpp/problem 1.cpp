@@ -1,31 +1,41 @@
-#include <bits/stdc++.h>
+// wap that will take (n x n) integer inputs into a square matrix of dimension n (where n must be an odd number).
+// Then calculate sum of the integers based on following position pattern (consider only the boxed position during the sum).
+// solve this using c++
 
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
-    vector<int> arr;
+    // Initializing variables
+    int n, sum = 0;
+    cout << "Enter the value of n (odd number): ";
+    cin >> n;
+    int arr[n][n];
 
-    int sum = 0;
-
-    while (t--)
+    // Input
+    for (int i = 0; i < n; i++)
     {
-        for (int i = 0; i < t; i++)
+        for (int j = 0; j < n; j++)
         {
-            int v;
-            cin >> v;
-            arr.push_back(v);
+            cin >> arr[i][j];
         }
     }
 
-    for (int i = 0; i < arr.size(); i++)
+    // Logic
+    for (int i = 0; i < n; i++)
     {
-        sum += arr[i];
+        for (int j = 0; j < n; j++)
+        {
+            if (i == j || i == n - j - 1 || j == n / 2 || i == n / 2)
+            {
+                sum += arr[i][j];
+            }
+        }
     }
 
-    cout << sum << endl;
+    // Output
+    cout << sum;
 
     return 0;
 }

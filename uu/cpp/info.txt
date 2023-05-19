@@ -1,0 +1,29 @@
+wap that will take (n x n) integer inputs into a square matrix of dimension n (where n must be an odd number).
+Then calculate sum of the integers based on following position pattern(consider only the boxed position during the sum).
+solve this while maintaining the following pattern and using c++
+
+
+
+calculate the sum of this following matrix pattern using c++
++---+---+---+---+---+
+| 1 | 2 | 3 |   | 5 |
++---+---+---+---+---+
+|   |   | 4 |   | 6 |
++---+---+---+---+---+
+| 3 | 4 | 9 | 6 | 7 |
++---+---+---+---+---+
+| 4 |   | 6 |   |   |
++---+---+---+---+---+
+| 5 |   | 3 | 2 | 1 |
++---+---+---+---+---+
+
+
+Sure, I'd be happy to describe the solution for calculating the sum of boxed integers in a square matrix using C++.
+
+Firstly, the program prompts the user to enter the size of the matrix (which must be an odd number), and dynamically creates a vector to store the matrix elements. Then, the program prompts the user to enter the matrix elements and stores them in the vector.
+
+Next, the program iterates over each element in the matrix and checks whether the element is in one of the boxed positions. The boxed positions are defined as the diagonal positions (i.e., positions where i == j or i == n - j - 1), the middle row (i == n / 2), and the middle column (j == n / 2). If the element is in one of these positions, its value is added to the sum variable.
+
+Finally, the program outputs the sum of the boxed integers to the user.
+
+Overall, this solution efficiently calculates the sum of the boxed integers in a square matrix of odd size using C++ by leveraging nested loops and conditional statements to iterate over the matrix elements and determine which elements should be included in the sum.

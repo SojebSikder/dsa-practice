@@ -3,9 +3,7 @@
         "*.js": "javascript",
         "*.html": "html",
         ".env": "plaintext",
-        "iostream": "cpp",
         "ostream": "cpp",
-        "new": "cpp",
-        "vector": "cpp"
+        "iostream": "cpp"
     }
 }
