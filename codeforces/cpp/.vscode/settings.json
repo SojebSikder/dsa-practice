@@ -3,6 +3,8 @@
         "*.js": "javascript",
         "*.html": "html",
         ".env": "plaintext",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "valarray": "cpp"
     }
 }
