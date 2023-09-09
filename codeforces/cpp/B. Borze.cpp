@@ -4,39 +4,24 @@ using namespace std;
 
 void solve()
 {
-    string n;
-    cin >> n;
-    string ans = "";
+    string s;
+    cin >> s;
 
-    for (int i = 0; i < n.size(); i++)
+    for (int i = 0; i < s.size(); i++)
     {
-        if (n[i] == '.')
+        if (s[i] == '.')
+            cout << 0;
+        else if (s[i] == '-' && s[i + 1] == '.')
         {
-            ans.append("0");
-        }
-        else if (n[i] == '-' && n[i + 1] == '.')
-        {
-            ans.append("1");
+            cout << 1;
             i++;
         }
-        else if (n[i] == '-' && n[i + 1] == '-')
+        else if (s[i] == '-' && s[i + 1] == '-')
         {
-            ans.append("2");
-            i++;
-        }
-        else if (n[i] == '-' && n[i + 1] == '\0')
-        {
-            ans.append("2");
-            i++;
-        }
-        else if (n[i] == '.' && n[i + 1] == '\0')
-        {
-            ans.append("0");
+            cout << 2;
             i++;
         }
     }
-
-    cout << ans << endl;
 }
 
 int main()
