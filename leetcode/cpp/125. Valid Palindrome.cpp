@@ -15,26 +15,55 @@ public:
             return true;
         return false;
     }
+    // bool isPalindrome(string s)
+    // {
+    //     string newS = "";
+    //     int n = s.size();
+
+    //     for (int i = 0; i < n; i++)
+    //     {
+    //         if (isalnum(s[i]))
+    //         {
+    //             newS += tolower(s[i]);
+    //         }
+    //     }
+
+    //     string revS = newS;
+    //     reverse(revS.begin(), revS.end());
+
+    //     if (newS == revS)
+    //         return true;
+    //     else
+    //         return false;
+    // }
+
+    // two pointer approach
     bool isPalindrome(string s)
     {
-        string newS = "";
         int n = s.size();
+        int left = 0, right = n - 1;
 
-        for (int i = 0; i < n; i++)
+        while (left < right)
         {
-            if (isalnum(s[i]))
+            while (left < right && !isalnum(s[left]))
             {
-                newS += tolower(s[i]);
+                left++;
             }
+            while (left < right && !isalnum(s[right]))
+            {
+                right--;
+            }
+
+            if (tolower(s[left]) != tolower(s[right]))
+            {
+                return false;
+            }
+
+            left++;
+            right--;
         }
 
-        string revS = newS;
-        reverse(revS.begin(), revS.end());
-
-        if (newS == revS)
-            return true;
-        else
-            return false;
+        return true;
     }
 };
 
