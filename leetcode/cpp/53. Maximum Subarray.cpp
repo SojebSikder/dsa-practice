@@ -12,7 +12,15 @@ public:
 
         for (int i = 1; i < nums.size(); i++)
         {
-            currentSum = max(nums[i], currentSum + nums[i]);
+            // currentSum = max(nums[i], currentSum + nums[i]);
+            // maxSum = max(maxSum, currentSum);
+
+            if (currentSum < 0)
+            {
+                currentSum = 0;
+            }
+
+            currentSum += nums[i];
             maxSum = max(maxSum, currentSum);
         }
 
