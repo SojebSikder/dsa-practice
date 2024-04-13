@@ -8,13 +8,27 @@ void solve()
     cin >> n;
 
     vector<int> a(n);
+    int k = 0;
 
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
+        k += a[i];
     }
 
-    
+    k = k / n;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] < k)
+        {
+            cout << "NO" << endl;
+            return;
+        }
+        a[i + 1] += a[i] - k;
+        a[i] = k;
+    }
+    cout << "YES" << endl;
 }
 
 int main()
