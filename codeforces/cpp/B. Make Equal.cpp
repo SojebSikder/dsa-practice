@@ -17,16 +17,17 @@ void solve()
     }
 
     k = k / n;
+    int curr = 0;
 
     for (int i = 0; i < n; i++)
     {
-        if (a[i] < k)
+        curr += a[i];
+        if (curr < k)
         {
             cout << "NO" << endl;
             return;
         }
-        a[i + 1] += a[i] - k;
-        a[i] = k;
+        curr -= k;
     }
     cout << "YES" << endl;
 }
