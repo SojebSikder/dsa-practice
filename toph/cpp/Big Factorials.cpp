@@ -32,6 +32,7 @@ void solve()
     cin >> n;
 
     vector<int> v;
+    // 1! = 1
     v.push_back(1);
 
     for (int i = 2; i <= n; i++)
