@@ -4,13 +4,40 @@ using namespace std;
 
 vector<int> acmTeam(vector<string> topic)
 {
-    vector<int> ans;
+    int n = topic.size();
+    int m = topic[0].size();
+    int max_topics = 0;
+    int max_teams = 0;
+    int topics;
+    int teams;
 
-    for (int i = 0; i < topic.size(); i++)
+    for (int i = 0; i < n - 1; i++)
     {
+        for (int j = i + 1; j < n; j++)
+        {
+            topics = 0;
+            for (int k = 0; k < m; k++)
+            {
+                if (topic[i][k] == '1' || topic[j][k] == '1')
+                {
+                    topics++;
+                }
+            }
+            if (topics > max_topics)
+            {
+                max_topics = topics;
+                max_teams = 1;
+            }
+            else if (topics == max_topics)
+            {
+                max_teams++;
+            }
+        }
     }
 
-    return ans;
+    vector<int> result{max_topics, max_teams};
+
+    return result;
 }
 
 int main()

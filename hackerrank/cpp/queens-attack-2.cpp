@@ -4,17 +4,44 @@ using namespace std;
 
 int queensAttack(int n, int k, int r_q, int c_q, vector<vector<int>> obstacles)
 {
-    int ans = 0;
+    int result = 0;
+    int r_o, c_o;
+    int r, c;
 
-    if (k > 0)
+    // 8 directions
+    vector<vector<int>> directions{{0, 1}, {1, 0}, {0, -1}, {-1, 0}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
+
+    // obstacles
+    unordered_map<int, unordered_set<int>> obstacles_map;
+    for (int i = 0; i < k; i++)
     {
-    }
-    else
-    {
-        ans += (n - 1) * (n - 1);
+        r_o = obstacles[i][0];
+        c_o = obstacles[i][1];
+        obstacles_map[r_o].insert(c_o);
     }
 
-    return ans;
+    // check 8 directions
+    for (int i = 0; i < 8; i++)
+    {
+        r = r_q;
+        c = c_q;
+        while (true)
+        {
+            r += directions[i][0];
+            c += directions[i][1];
+            if (r < 1 || r > n || c < 1 || c > n)
+            {
+                break;
+            }
+            if (obstacles_map[r].find(c) != obstacles_map[r].end())
+            {
+                break;
+            }
+            result++;
+        }
+    }
+
+    return result;
 }
 
 int main()
@@ -29,7 +56,7 @@ int main()
 
     result = queensAttack(n, k, r_q, c_q, obstacles);
 
-    cout << result << endl; // 10
+    cout << result << endl; // 9
 
     return 0;
 }
