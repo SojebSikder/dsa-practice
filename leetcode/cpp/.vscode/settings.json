@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "*.js": "javascript",
+        "*.html": "html",
+        ".env": "plaintext",
+        "chrono": "cpp",
+        "functional": "cpp",
+        "new": "cpp"
+    }
+}
