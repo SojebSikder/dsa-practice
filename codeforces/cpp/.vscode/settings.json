@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "*.js": "javascript",
+        "*.html": "html",
+        ".env": "plaintext",
+        "iostream": "cpp"
+    }
+}
