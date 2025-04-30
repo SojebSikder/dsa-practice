@@ -11,7 +11,7 @@ void solve()
     for (auto c : n)
     {
         char ch = (char)tolower(c);
-        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'y')
         {
             continue;
         }
