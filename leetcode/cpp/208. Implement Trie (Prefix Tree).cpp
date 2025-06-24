@@ -26,7 +26,7 @@ public:
 
         for (char c : word)
         {
-            if (cur->children[c] == nullptr)
+            if (cur->children.find(c) == cur->children.end())
             {
                 cur->children[c] = new TrieNode();
             }
@@ -41,7 +41,7 @@ public:
 
         for (char c : word)
         {
-            if (cur->children[c] == nullptr)
+            if (cur->children.find(c) == cur->children.end())
             {
                 return false;
             }
@@ -56,7 +56,7 @@ public:
 
         for (char c : prefix)
         {
-            if (cur->children[c] == nullptr)
+            if (cur->children.find(c) == cur->children.end())
             {
                 return false;
             }
