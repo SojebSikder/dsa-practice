@@ -26,6 +26,7 @@ public:
 
         for (char c : word)
         {
+            // if null
             if (cur->children.find(c) == cur->children.end())
             {
                 cur->children[c] = new TrieNode();
