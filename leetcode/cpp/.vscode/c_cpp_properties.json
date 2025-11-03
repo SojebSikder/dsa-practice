@@ -12,8 +12,8 @@
             ],
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "${default}",
-            "compilerPath": "D:/ProgramData/msys64/ucrt64/bin/g++.exe"
+            "intelliSenseMode": "windows-msvc-x64",
+            "compilerPath": "D:\\ProgramData\\msys64\\ucrt64\\bin\\g++.exe"
         }
     ],
     "version": 4
